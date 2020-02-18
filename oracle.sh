@@ -1,9 +1,22 @@
 #!/bin/bash
 
-read -p "Você quer baixar os clients do Oracle? (y/n)" choice
+basic=http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+devel=http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
+
+read -p $(whoami)", deseja instalar e configurar o driver do Oracle? (y/n)" choice
 case $choice in
-y|Y ) eval wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm && wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm;;
+y|Y ) 
+echo "Agora vai, meu patrão."
+eval wget $basic && wget $devel;;
+
+
+
 n|Y ) echo "Boa, jogador";;
+
+
+
+
+
 * ) echo "Bixo, digite direito.";;
 esac
 
