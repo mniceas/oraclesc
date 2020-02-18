@@ -16,8 +16,10 @@ eval sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb && sudo 
 extdir="$(eval php -i | grep extension_dir)"
 phpinipath="$eval php -i | grep php.ini"
 
+extpath = ${extdir}
+
 #Baixando a extensão para PHP 7.3
 eval wget http://raptorgames.myscriptcase.com/oci8.so
 
 #Movendo extensão para o diretório correto
-eval sudo cp -avr oci8.so ${extdir}
+eval sudo cp -avr oci8.so ${extpath}
