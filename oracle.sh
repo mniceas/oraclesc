@@ -1,8 +1,13 @@
 #!/bin/bash
 
-#Baixando os clients
-eval wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm && wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
+read -p "Você quer baixar os clients do Oracle? (y/n)" choice
+case $choice in
+y|Y ) eval wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm && wget http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm;;
+n|Y ) echo "Boa, jogador";;
+* ) echo "Bixo, digite direito.";;
+esac
 
+<<COMMENT
 #Instalando o Alien
 eval sudo apt-get install alien
 
@@ -35,3 +40,4 @@ eval sudo cp -avr oci8.so ${extdir[2]}
 
 #Declarando variável no php.ini
 echo "extension=oci8.so" >> ${phpdir[10]}
+COMMENT
