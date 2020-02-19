@@ -9,18 +9,17 @@ y|Y )
 echo "Agora vai, meu patrão."
 eval wget $basic && wget $devel;;
 
+#Identificando versão do PHP
+
+declare phpv
+phpv=(`php -i | grep 'PHP Version'`)
 
 
-n|Y ) echo "Boa, jogador";;
+declare phpv
+phpv=(`php -i | grep 'PHP Version' | cut -c 16-21`)
+#echo $phpv
 
 
-
-
-
-* ) echo "Bixo, digite direito.";;
-esac
-
-<<COMMENT
 #Instalando o Alien
 eval sudo apt-get install alien
 
@@ -29,11 +28,6 @@ eval sudo alien ~/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm && sudo
 
 #Instalando os pacotes
 eval sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb && sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
-
-#Recuperando as variáveis
-#extdir="$(eval php -i | grep extension_dir)"
-#phpinipath="$eval php -i | grep php.ini"
-#extpath = ${extdir}
 
 #Recuperando diretório de extensões
 declare extdir
@@ -53,4 +47,14 @@ eval sudo cp -avr oci8.so ${extdir[2]}
 
 #Declarando variável no php.ini
 echo "extension=oci8.so" >> ${phpdir[10]}
-COMMENT
+
+#Adicionando a diretiva LD_LIBRARY_PATH no envvars
+
+echo "export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/" >> /etc/apache2/envvars
+
+#Reiniciando o serviço do Apache
+eval sudo service apache2 restart
+
+
+* ) echo "Bixo, digite direito.";;
+esac
