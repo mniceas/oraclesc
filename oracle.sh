@@ -13,11 +13,12 @@ declare phpv
 phpv=(`php -i | grep 'PHP Version' | cut -c 16-21`)
 #echo $phpv
 #Atualizando o sistema
-eval y|sudo apt-get update && apt-get upgrade
+eval sudo apt-get -y update && apt-get upgrade
 #Instalando o Alien
-eval y|sudo apt-get install alien
+eval sudo apt-get -y install alien
 #Convertendo de RPM para DEB
-eval sudo alien ~/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm && sudo alien ~/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+cpath=`pwd`
+eval sudo alien $cpath/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm && sudo alien $cpath/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 #Instalando os pacotes
 eval sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb && sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
 #Recuperando diretório de extensões
