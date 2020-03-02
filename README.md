@@ -13,7 +13,6 @@ $ `sudo bash oracle.sh`
 __2 -__ Após executar, para dar inicio a instalação digite a tecla "y".
 
 
-### Mais informações
-
+## Mais informações
 github.com/mniceas
-
+niceas49@hotmail.com 
