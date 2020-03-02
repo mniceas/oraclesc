@@ -6,7 +6,9 @@ devel=http://cdn1.netmake.com.br/download/Conexao/Oracle/Linux/oracle-instantcli
 read -p $(whoami)", deseja instalar e configurar o driver do Oracle? (y/n)" choice
 case $choice in
 y|Y ) 
+echo ""
 echo "Agora vai, meu patrão."
+echo ""
 eval wget $basic && wget $devel
 #Identificando versão do PHP
 declare phpv
@@ -44,6 +46,7 @@ sudo echo "export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/" >> /etc/ap
 eval sudo service apache2 restart;;
 
 n|N ) echo "Falow."
+echo ""
 echo "-Appa";;
 
 * ) echo "Bixo, digite direito..."
