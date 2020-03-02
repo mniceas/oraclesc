@@ -17,4 +17,4 @@ __2 -__ Após executar, para dar inicio a instalação digite a tecla "y".
 ### Mais informações
 
 github.com/mniceas
-Desenvolvido por Matheus Nicéas, 2020.
+
