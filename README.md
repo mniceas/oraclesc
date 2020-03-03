@@ -6,7 +6,7 @@ Instalação e configuração do driver PHP do Oracle no Scriptcase 9.4 com PHP 
 
 __1 -__ Crie um clone do projeto e acesse a pasta do projeto para localizar o arquivo `oracle.sh.
 
-`$ git clone https://github.com/mniceas/oraclesc`  
+`$ git clone https://github.com/mniceas/oraclesc`<br>  
 `$ cd oraclesc/`
 
 __2 -__ Para executar o arquivo .sh, utilize o comando de permissão `sudo` e o comando de execução `bash`.
