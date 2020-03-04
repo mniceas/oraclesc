@@ -17,7 +17,7 @@ echo $phpv
 #Atualizando o sistema
 eval sudo apt-get -y update && apt-get -y upgrade
 #Instalando o Alien
-eval sudo apt-get -y install alien
+eval sudo apt-get -y install alien libaio1 libncurses5 gcc-multilib g++-multilib libpam0g ksh unixodbc-dev unixodbc
 #Convertendo de RPM para DEB
 cpath=`pwd`
 eval sudo alien $cpath/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm && sudo alien $cpath/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
